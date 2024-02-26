@@ -1,4 +1,5 @@
-import { Formik, Field, Form } from "formik"
+import { Formik } from "formik"
+import Forms from "./component/Forms"
 
 function App() {
 
@@ -12,16 +13,9 @@ function App() {
       console.log(actions)
       alert(JSON.stringify(values,null, 2))
     }}
+    validationSchema={null}
     >
-      <Form>
-        <label htmlFor="nome">Insira seu nome:</label>
-        <Field name="nome" type="text" />
-
-        <label htmlFor="cargo">Insira o cargo desejado:</label>
-        <Field name="cargo" type="text" />
-
-        <button type="submit">ALERT</button>
-      </Form>
+      <Forms />
     </Formik>
   )
 }
