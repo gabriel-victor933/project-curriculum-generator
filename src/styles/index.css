@@ -9,16 +9,32 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 50px;
 }
 
 form {
+  width: 50%;
+}
+
+form > div{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%
 }
 
 button, input, select {
   height: 30px;
   margin: 7px 0px;
+  width: 100%;
 } 
+
+h2 {
+  font-size: 32px;
+  margin: 10px 0px 15px 0px;
+}
+
+.errorMessage {
+  font-size: 14px;
+  color: red;
+}
