@@ -1,5 +1,6 @@
 import { Formik } from "formik"
 import Forms from "./component/Forms"
+import formSchema from "./schemas/formSchemas"
 
 function App() {
 
@@ -7,13 +8,32 @@ function App() {
     <Formik
     initialValues={{
       nome: "",
-      cargo: ""
+      telefone: "",
+      email: "",
+      cargo: "",
+      objetivo: "",
+      redesSociais: [{
+        tipo: "",
+        link: ""
+      }],
+      formacoes: [{
+        instituicao: "",
+        curso: "",
+        dataInicial: "",
+        dataFinal: ""
+      }],
+      experiencias: [{
+        empresa: "",
+        dataInicial: "",
+        dataFinal: "",
+        atividades: "",
+      }]
     }}
     onSubmit={(values,actions)=>{
       console.log(actions)
       alert(JSON.stringify(values,null, 2))
     }}
-    validationSchema={null}
+    validationSchema={formSchema}
     >
       <Forms />
     </Formik>
