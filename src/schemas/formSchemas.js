@@ -17,9 +17,11 @@ const formSchema = yup.object({
     })).min(1),
     experiencias: yup.array().of(yup.object({
         empresa: yup.string().required("Este campo é obrigatório"),
+        cargo: yup.string().required(),
+        atividades: yup.string().required("Este campo é obrigatório"),
         dataInicial: yup.date().required("Este campo é obrigatório"),
         dataFinal: yup.date().required("Este campo é obrigatório"),
-        atividades: yup.string().required("Este campo é obrigatório"),
+        
     }))
 })
 

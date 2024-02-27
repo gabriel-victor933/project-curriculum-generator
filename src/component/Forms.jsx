@@ -1,5 +1,7 @@
 import {  Field, ErrorMessage, Form } from "formik"
 import Formacao from "./formComponents/Formacao"
+import Experiencia from "./formComponents/Experiencia"
+import RedesSociais from "./formComponents/RedesSocias"
 
 export default function Forms(){
 
@@ -17,9 +19,14 @@ export default function Forms(){
           <ErrorMessage name="cargo" className="errorMessage"  component="small"/>
         </div>
 
+        <h2>Redes Sociais</h2>
+        <RedesSociais />
+
         <h2>Formacao:</h2>
         <Formacao />
 
+        <h2>Experiencia:</h2>
+        <Experiencia />
 
 
         <button type="submit">ALERT</button>

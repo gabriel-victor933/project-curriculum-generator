@@ -24,6 +24,7 @@ function App() {
       }],
       experiencias: [{
         empresa: "",
+        cargo: "",
         dataInicial: "",
         dataFinal: "",
         atividades: "",
