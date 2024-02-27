@@ -3,6 +3,9 @@ import * as yup from "yup"
 const formSchema = yup.object({
     nome: yup.string().min(2).max(120).required("Este campo é obrigatório"),
     cargo: yup.string().min(2).max(120).required("Este campo é obrigatório"),
+    dataNascimento: yup.date().required("Este campo é obrigatório"),
+    estado: yup.string().required(),
+    cidade: yup.string().required(),
     email: yup.string().email().required("Este campo é obrigatório"),
     objetivo: yup.string().min(5).max(500).notRequired(),
     redesSociais: yup.array().of(yup.object({

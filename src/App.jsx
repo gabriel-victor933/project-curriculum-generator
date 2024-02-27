@@ -1,6 +1,10 @@
 import { Formik } from "formik"
+import {  Packer } from "docx";
+import { saveAs } from "file-saver";
+
 import Forms from "./component/Forms"
 import formSchema from "./schemas/formSchemas"
+import gerarDocs from "./services/gerarDocs";
 
 function App() {
 
@@ -9,7 +13,10 @@ function App() {
     initialValues={{
       nome: "",
       telefone: "",
+      dataNascimento: "",
       email: "",
+      cidade: "",
+      estado: "SP",
       cargo: "",
       objetivo: "",
       redesSociais: [{
@@ -31,8 +38,11 @@ function App() {
       }]
     }}
     onSubmit={(values)=>{
-      console.log(values)
-      //alert(JSON.stringify(values,null, 2))
+      const doc = gerarDocs(values)
+
+      Packer.toBlob(doc).then((blob)=>{
+        saveAs(blob,"resume.docx")
+      })
     }}
     validationSchema={formSchema}
     >
